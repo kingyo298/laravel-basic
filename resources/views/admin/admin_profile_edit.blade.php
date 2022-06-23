@@ -38,7 +38,7 @@
                   <div class="row mb-3">
                     <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
-                      <img id="showImage" src="{{asset('backend/assets/images/small/img-5.jpg')}}" alt="Card image cap" class="rounded avatar-lg">
+                      <img id="showImage" src="{{(!empty($editData->profile_image)) ? url('upload/admin_images/' . $editData->profile_image) : url('upload/no_image.jpg')}}" alt="Card image cap" class="rounded avatar-lg">
                     </div>
                   </div>
                   <input type="submit" class="btn btn-info waves-effect waves-light" value="Update Profile">
