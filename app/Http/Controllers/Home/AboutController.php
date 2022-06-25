@@ -68,7 +68,7 @@ class AboutController extends Controller
             Image::make($multi_image)->resize(220,220)->save('upload/multi/'.$name_gen);
             $save_url = 'upload/multi/' . $name_gen;
             MultiImage::insert([
-                'about_image' => $save_url,
+                'multi_image' => $save_url,
                 'created_at' => Carbon::now()
             ]);
         }
@@ -86,7 +86,7 @@ class AboutController extends Controller
 
     public function EditMultiImage($id){
         $multiImage = MultiImage::findOrFail($id);
-        return view('admin.about_page.edit_multi_image', compact('multiImage'));
+        return view('admin.about_page.edit_multiimage', compact('multiImage'));
     } // End Method
 
     public function UpdateMultiImage(Request $request){
