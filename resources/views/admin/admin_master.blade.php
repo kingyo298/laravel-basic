@@ -119,6 +119,8 @@
  }
  @endif
 </script>
+<script src="{{asset('backend/assets/libs/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('backend/assets/js/pages/form-editor.init.js')}}"></script>
     </body>
 
 </html>
