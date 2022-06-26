@@ -80,6 +80,7 @@ Route::controller(BlogController::class)->group(function(){
     Route::get('/edit/blog/{id}', 'EditBlog')->name('edit.blog');
     Route::post('/update/blog', 'UpdateBlog')->name('update.blog');
     Route::get('/delete/blog/{id}', 'DeleteBlog')->name('delete.blog');
+    Route::get('/blog/details/{id}', 'BlogDetails')->name('blog.details');
 });
 Route::get('/dashboard', function () {
     return view('admin.index');
