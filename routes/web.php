@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
@@ -89,6 +90,11 @@ Route::controller(BlogController::class)->group(function(){
 Route::controller(FooterController::class)->group(function(){
    Route::get('/footer/setup','FooterSetup')->name('footer.setup');
    Route::post('/update/footer','UpdateFooter')->name('update.footer');
+});
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/contact','Contact')->name('contact.me');
+    Route::post('/store/message','StoreMessage')->name('store.message');
 });
 Route::get('/dashboard', function () {
     return view('admin.index');
