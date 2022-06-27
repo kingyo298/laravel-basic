@@ -21,11 +21,12 @@ use App\Http\Controllers\Home\FooterController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 
 Route::controller(DemoController::class)->group(function () {
+    Route::get('/','HomeMain')->name('home');
     Route::get('/about','Index')->name('about.page')->middleware('check');
     Route::get('/contact','ContactMethod')->name('contact.page');
 });
@@ -64,6 +65,7 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::post('/update/portfolio','UpdatePortfolio')->name('update.portfolio');
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
+    Route::get('/portfolio','HomePortfolio')->name('home.portfolio');
 });
 
 Route::controller(BlogCategoryController::class)->group(function(){
